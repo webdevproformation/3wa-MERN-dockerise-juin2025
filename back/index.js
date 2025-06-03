@@ -30,6 +30,21 @@ app.get("/", async (req, rep )=> {
     }
 });
 
+app.get("/delete/:id", async (req, rep )=> {
+
+    const {id} = req.params ;
+    console.log(id)
+    try{
+        await Etudiant.findByIdAndDelete(id)
+        rep.json({msg : "ok"})
+    }
+    catch(err){
+        rep.json({msg : err})
+    }
+});
+
+
+
 app.post("/" , async ( req, rep ) => {
     try{
         const { name , age } = req.body;
