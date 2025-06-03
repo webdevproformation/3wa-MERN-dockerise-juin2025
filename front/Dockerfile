@@ -1,7 +1,7 @@
 # Dockerfile
 # https://medium.com/@pvasu3658/guide-to-dockerizing-and-deploying-your-vite-react-app-8ed6eaca002e
 # Step 1: Use a Node.js image to build the app
-FROM node:18-alpine as builder
+FROM node:18-alpine AS builder
 
 # Set working directory inside the container
 WORKDIR /app
