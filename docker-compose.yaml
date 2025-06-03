@@ -1,0 +1,43 @@
+services:
+  
+  # React
+  # front:
+
+  # docker compose up -d --build
+  # http://localhost:4000/
+  # Node
+  back:
+    build: ./back
+    container_name: mon_back
+    ports:
+      - 4000:4000
+    depends_on:
+      - bdd
+
+  # mongoDB
+  # `docker run --name mon_mongo -d --rm mongo` 
+  # cd ../03-docker-compose
+  # docker compose up -d
+  # docker compose down
+  # docker stop mon_mongo
+  bdd:
+    image: mongo:latest
+    container_name: mon_mongo
+    # créer une base mongo qui s'appelle app
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: app
+    # remplir cette base avec une collection (table) contenant les informations écrites dans le fichier init.js
+    # docker exec -it mon_mongo mongosh
+    # show dbs ;
+    # use app ;
+    # db.etudiants.find()
+    volumes:
+      - ./bdd/init.js:/docker-entrypoint-initdb.d/init.js
+      # persistance faire en sorte que les données soient stockées et non supprimées à chaque redémarrage du conteneur lorsque l'on fait docker compose down
+      - ./bdd/data:/data/db
+      - ./bdd/dbconfig:/data/configdb
+
+volumes:
+  dbdata: {}
+  dbconfig: {}
