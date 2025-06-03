@@ -28,3 +28,6 @@ http://localhost:5173/
 ```sh
 npm install tailwindcss @tailwindcss/vite
 ```
+
+# dockerizer le front 
+

@@ -157,6 +157,4 @@ docker rmi mon_back
 => finir avec la partie front => React 
 
 
-# rdv 14h00 bon appétit !!!!!!!!!!!!
 
-d:
