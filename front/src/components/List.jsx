@@ -10,7 +10,7 @@ const List = () =>{
 
         const id_etudiant_a_supprimer = e.target.dataset.id ;
 
-        fetch(`http://localhost:4000/delete/${id_etudiant_a_supprimer}`)
+        fetch(`${import.meta.env.VITE_API_URI}/delete/${id_etudiant_a_supprimer}`)
             .then(reponse => reponse.json())
             .then(({msg}) => {
 

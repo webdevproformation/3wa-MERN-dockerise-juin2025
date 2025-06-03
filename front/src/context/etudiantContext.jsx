@@ -7,7 +7,7 @@ export const EtudiantContextProvider = function({children}){
     const [etudiants, setEtudiants] = useState([]);
 
     useEffect( ()=> {
-        fetch("http://localhost:4000")
+        fetch(import.meta.env.VITE_API_URI)
             .then( response => response.json() )
             .then(data => setEtudiants(data))
     } , [])
