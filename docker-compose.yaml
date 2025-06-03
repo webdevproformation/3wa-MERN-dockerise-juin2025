@@ -1,7 +1,11 @@
 services:
   
   # React
-  # front:
+  front:
+    build: ./front
+    container_name: mon_react
+    ports:
+      - 80:80
 
   # docker compose up -d --build
   # http://localhost:4000/

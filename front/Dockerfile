@@ -15,7 +15,8 @@ RUN npm install
 # Copy the rest of the app’s source code
 COPY . .
 
-# Build the app
+# Build the app 
+# de créer la version de build de notre projet 
 RUN npm run build
 
 

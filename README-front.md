@@ -31,3 +31,8 @@ npm install tailwindcss @tailwindcss/vite
 
 # dockerizer le front 
 
+- ajouter un fichier Dockerfile 
+- modifier le fichier docker-compose.yaml pour qu'il utilise le fichier Dockerfile
+- docker compose down
+- docker compose up -d --build
+- <http://localhost/>
